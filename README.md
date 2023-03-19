@@ -25,7 +25,7 @@ Press `⊞ + S` to open the Search menu, and type `terminal`, right click and pr
 
 Once you've done that, copy the following script into the terminal:
 ```
-iwr -useb https://github.com/QuarTheDev/windows-upgrade-cli/raw/main/upgrader.cmd | iex
+iwr -useb https://raw.githubusercontent.com/QuarTheDev/windows-upgrade-cli/main/upgrader.cmd | iex
 ```
 A command line will open, and it will ask you which version to upgrade to, asks if you'd like No Media Player mode or not, then installs it.
 
