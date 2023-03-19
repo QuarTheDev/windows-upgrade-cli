@@ -1,14 +1,14 @@
 @echo off
+cp65001
 cls
 
 :: Greet the user and check for administrator privileges
-echo Windows Key Upgrader
+echo Windows Upgrader
 echo.
 
 net session >nul 2>&1
 if %errorLevel% neq 0 (
     echo This script must be run as an administrator. Exiting...
-    pause >nul
     exit /b
 )
 
@@ -72,20 +72,20 @@ set /P upgrade=Are you sure you wish to upgrade to %name%? (Y/N):
 if /i "%upgrade%"=="Y" (
     echo.
     echo Upgrading now...
-    slmgr /skms kms8.msguides.com
-    echo.
-    echo Successfully set KMS server.
-    slmgr /ipk %key%
-    echo.
-    echo Successfully registered IPK key.
-    slmgr /ato
-    echo.
+    slmgr /upk
+    slmgr /cpky
+    slmgr /ckms
+    sc config LicenseManager start= auto
+    net start LicenseManage
+    sc config wuauserv start= auto
+    net start wuauser
+    changepk.exe /productkey %key%
     echo You have registered %name%.
     echo Restart to apply these changes.
-    pause>nul
+    exit
 ) else (
     echo.
     echo End-user stalemate; exiting.
     echo.
 )
-pause>nul
+exit
