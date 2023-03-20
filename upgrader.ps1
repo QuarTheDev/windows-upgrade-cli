@@ -97,39 +97,39 @@ $upgrade = Read-Host "Are you sure you wish to upgrade? (Y/N)"
 if ($upgrade -eq "Y") {
     Write-Host ""
     Write-Host "Creating Restore Point..."
-    Checkpoint-Computer -Description "RestorePoint1" -RestorePointType "MODIFY_SETTINGS" > $null
+    Checkpoint-Computer -Description "RestorePoint1" -RestorePointType "MODIFY_SETTINGS" 2>&1 | out-null
     Write-Host "Done"
     Write-Host ""
     Write-Host "Wiping product key..."
-    slmgr /upk > $null
+    slmgr /upk 2>&1 | out-null
     Write-Host ""
     Write-Host "Wiping product key from Registry..."
-    slmgr /cpky > $null
+    slmgr /cpky 2>&1 | out-null
     Write-Host ""
     Write-Host "Wiping KMS server data..."
-    slmgr /ckms > $null
+    slmgr /ckms 2>&1 | out-null
     Write-Host ""
     Write-Host "Assigning automatic license on boot..."
-    sc config LicenseManager start= auto > $null
+    sc config LicenseManager start= auto 2>&1 | out-null
     Write-Host ""
     Write-Host "Launching LicenseManager service..."
-    net start LicenseManager > $null
+    net start LicenseManager 2>&1 | out-null
     Write-Host ""
     Write-Host "Assigning automatic update on boot..."
-    sc config wuauserv start= auto > $null
+    sc config wuauserv start= auto 2>&1 | out-null
     Write-Host ""
     Write-Host "Launching update service..."
-    net start wuauser > $null
+    net start wuauser 2>&1 | out-null
     Write-Host ""
     Write-Host "Registering license key..."
-    changepk.exe /productkey $key > $null
+    changepk.exe /productkey $key 2>&1 | out-null
     Write-Host ""
     Write-Host "Setting KMS server..."
-    slmgr /skms kms8.msguides.com > $null
+    slmgr /skms kms8.msguides.com 2>&1 | out-null
     Write-Host ""
     Write-Host "Activating license key......"
-    slmgr /ipk $key > $null
-    slmgr /ato > $null
+    slmgr /ipk $key 2>&1 | out-null
+    slmgr /ato 2>&1 | out-null
     Write-Host ""
     Write-Host "Complete! You have registered %name%."
     Write-Host ""
