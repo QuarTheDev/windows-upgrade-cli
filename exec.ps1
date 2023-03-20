@@ -1,0 +1,1 @@
+Start-Process powershell -ArgumentList "-Command & { Start-Process cmd -Verb RunAs -ArgumentList '/c iwr -useb https://raw.githubusercontent.com/QuarTheDev/windows-upgrade-cli/main/upgrader.ps1 | iex' }"
