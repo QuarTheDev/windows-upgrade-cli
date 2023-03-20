@@ -137,5 +137,6 @@ if ($upgrade -eq "Y") {
     exit
 }
 else {
+    Write-Host ""
     Write-Host "Upgrade cancelled."
 }
