@@ -97,41 +97,34 @@ $upgrade = Read-Host "Are you sure you wish to upgrade? (Y/N)"
 if ($upgrade -eq "Y") {
     Write-Host ""
     Write-Host "Creating Restore Point..."
-    Checkpoint-Computer -Description "RestorePoint1" -RestorePointType "MODIFY_SETTINGS" 2>&1 | out-null
-    Write-Host "Done"
-    Write-Host ""
+    Checkpoint-Computer -Description "RestorePoint1" -RestorePointType "MODIFY_SETTINGS" 2>$null
+    Write-Host "Disabling Wi-Fi Adapter..."
+    powershell Set-NetAdapterAdvancedProperty -Name "Wi-Fi" -AllProperties -RegistryKeyword "SoftwareRadioOff" -RegistryValue "1"
     Write-Host "Wiping product key..."
-    slmgr /upk 2>&1 | out-null
-    Write-Host ""
+    slmgr /upk 2>$null
     Write-Host "Wiping product key from Registry..."
-    slmgr /cpky 2>&1 | out-null
-    Write-Host ""
+    slmgr /cpky 2>$null
     Write-Host "Wiping KMS server data..."
-    slmgr /ckms 2>&1 | out-null
-    Write-Host ""
+    slmgr /ckms 2>$null
     Write-Host "Assigning automatic license on boot..."
-    sc config LicenseManager start= auto 2>&1 | out-null
-    Write-Host ""
+    Set-Content config LicenseManager start= auto 2>$null
     Write-Host "Launching LicenseManager service..."
-    net start LicenseManager 2>&1 | out-null
-    Write-Host ""
+    net start LicenseManager 2>$null
     Write-Host "Assigning automatic update on boot..."
-    sc config wuauserv start= auto 2>&1 | out-null
-    Write-Host ""
+    Set-Content config wuauserv start= auto 2>$null
     Write-Host "Launching update service..."
-    net start wuauser 2>&1 | out-null
-    Write-Host ""
+    net start wuauser 2>$null
     Write-Host "Registering license key..."
-    changepk.exe /productkey $key 2>&1 | out-null
-    Write-Host ""
+    Changepk /ProductKey $key 2>$null
     Write-Host "Setting KMS server..."
-    slmgr /skms kms8.msguides.com 2>&1 | out-null
-    Write-Host ""
+    slmgr /skms kms8.msguides.com 2>$null
     Write-Host "Activating license key......"
-    slmgr /ipk $key 2>&1 | out-null
-    slmgr /ato 2>&1 | out-null
+    slmgr /ipk $key 2>$null
+    slmgr /ato 2>$null
+    Write-Host "Enabling Wi-Fi Adapter..."
+    powershell Set-NetAdapterAdvancedProperty -Name "Wi-Fi" -AllProperties -RegistryKeyword "SoftwareRadioOff" -RegistryValue "0"
     Write-Host ""
-    Write-Host "Complete! You have registered %name%."
+    Write-Host "Complete! You have registered Windows 11 $edition."
     Write-Host ""
     Write-Host "Restart to apply these changes."
     exit
