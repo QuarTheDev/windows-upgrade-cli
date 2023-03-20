@@ -29,26 +29,22 @@ switch ($option) {
     1 {
         $edition = "Home"
         Write-Host ""
-        Write-Host "Do you want Media Player functionality? (Y/N)"
-        $media = Read-Host
+        $media = Read-Host "Do you want Media Player functionality? (Y/N)"
     }
     2 {
         $edition = "Pro"
         Write-Host ""
-        Write-Host "Do you want Media Player functionality? (Y/N)"
-        $media = Read-Host
+        $media = Read-Host "Do you want Media Player functionality? (Y/N)"
     }
     3 {
         $edition = "Education"
         Write-Host ""
-        Write-Host "Do you want Media Player functionality? (Y/N)"
-        $media = Read-Host
+        $media = Read-Host "Do you want Media Player functionality? (Y/N)"
     }
     4 {
         $edition = "Enterprise"
         Write-Host ""
-        Write-Host "Do you want Media Player functionality? (Y/N)"
-        $media = Read-Host
+        $media = Read-Host "Do you want Media Player functionality? (Y/N)"
     }
 }
 
@@ -106,12 +102,12 @@ if ($upgrade -eq "Y") {
     slmgr /cpky 2>$null
     Write-Host "Wiping KMS server data..."
     slmgr /ckms 2>$null
-    Write-Host "Assigning automatic license on boot..."
-    Set-Content config LicenseManager start= auto 2>$null
+    # Write-Host "Assigning automatic license on boot..."
+    # Set-Content config LicenseManager start= auto 2>$null
     Write-Host "Launching LicenseManager service..."
     net start LicenseManager 2>$null
-    Write-Host "Assigning automatic update on boot..."
-    Set-Content config wuauserv start= auto 2>$null
+    # Write-Host "Assigning automatic update on boot..."
+    # Set-Content config wuauserv start= auto 2>$null
     Write-Host "Launching update service..."
     net start wuauser 2>$null
     Write-Host "Registering license key..."
@@ -122,8 +118,10 @@ if ($upgrade -eq "Y") {
     slmgr /ipk $key 2>$null
     slmgr /ato 2>$null
     Write-Host "Enabling Wi-Fi Adapter..."
+    Get-Process wscript | foreach { $_.CloseMainWindow() } | Out-Null
     powershell Set-NetAdapterAdvancedProperty -Name "Wi-Fi" -AllProperties -RegistryKeyword "SoftwareRadioOff" -RegistryValue "0"
     Write-Host ""
+    Get-Process wscript | foreach { $_.CloseMainWindow() } | Out-Null
     Write-Host "Complete! You have registered Windows 11 $edition."
     Write-Host ""
     Write-Host "Restart to apply these changes."
@@ -132,4 +130,15 @@ if ($upgrade -eq "Y") {
 else {
     Write-Host ""
     Write-Host "Upgrade cancelled."
+    exit
 }
+
+#      You found me!
+# 
+#            O
+#           /|\
+#            |
+#           / \
+#
+# Thanks for supporting me!
+#  -@QuarTheDev // GitHub
