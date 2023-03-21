@@ -1,5 +1,5 @@
 # Requires -RunAsAdministrator
-cls
+Clear-Host
 
 # Greet the user and check for administrator privileges
 Write-Host "Windows Upgrader"
@@ -118,10 +118,10 @@ if ($upgrade -eq "Y") {
     slmgr /ipk $key 2>$null
     slmgr /ato 2>$null
     Write-Host "Enabling Wi-Fi Adapter..."
-    Get-Process wscript | foreach { $_.CloseMainWindow() } | Out-Null
+    Get-Process wscript | ForEach-Object { $_.CloseMainWindow() } | Out-Null
     powershell Set-NetAdapterAdvancedProperty -Name "Wi-Fi" -AllProperties -RegistryKeyword "SoftwareRadioOff" -RegistryValue "0"
     Write-Host ""
-    Get-Process wscript | foreach { $_.CloseMainWindow() } | Out-Null
+    Get-Process wscript | ForEach-Object { $_.CloseMainWindow() } | Out-Null
     Write-Host "Complete! You have registered Windows 11 $edition."
     Write-Host ""
     Write-Host "Restart to apply these changes."
