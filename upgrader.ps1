@@ -110,8 +110,8 @@ if ($upgrade -eq "Y") {
     # Set-Content config wuauserv start= auto 2>$null
     Write-Host "Launching update service..."
     net start wuauser 2>$null
-    Write-Host "Registering license key..."
-    Changepk /ProductKey $key 2>$null
+    # Write-Host "Registering license key..."
+    # Changepk /ProductKey $key 2>$null
     Write-Host "Setting KMS server..."
     slmgr /skms kms8.msguides.com 2>$null
     Write-Host "Activating license key......"
