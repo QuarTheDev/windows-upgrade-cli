@@ -93,7 +93,7 @@ $upgrade = Read-Host "Are you sure you wish to upgrade? (Y/N)"
 if ($upgrade -eq "Y") {
     Write-Host ""
     Write-Host "Creating Restore Point..."
-    Checkpoint-Computer -Description "RestorePoint1" -RestorePointType "MODIFY_SETTINGS" 2>$null
+    Checkpoint-Computer -Description "Windows Key Upgrade Utility" -RestorePointType "MODIFY_SETTINGS" 2>$null
     Write-Host "Disabling Wi-Fi Adapter..."
     powershell Set-NetAdapterAdvancedProperty -Name "Wi-Fi" -AllProperties -RegistryKeyword "SoftwareRadioOff" -RegistryValue "1"
     Write-Host "Wiping product key..."
