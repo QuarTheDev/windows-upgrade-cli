@@ -57,8 +57,7 @@ A new window will open. At the bottom, select 'Choose a different restore point'
 Double-check that you selected the correct restore point, and then press Finish to revert back to your old key. **This will require a restart.**
 
 ### Future features
-In the future, I plan to work on the following features:
-<sup>**ⓘ** ‌ ‌ Entries marked as ✨ are actively being developed:</sup>
+In the future, I plan to work on the following features:<br><sup>**ⓘ** ‌ ‌ Entries marked as ✨ are actively being developed:</sup>
 
 - <sup><sub>✨</sub></sup> An automatic 'thumb-drive' version to automatically mass-upgrade many machines 
 - <sup><sub>✨</sub></sup> Removing annoying Windows Script Host dialog boxes
