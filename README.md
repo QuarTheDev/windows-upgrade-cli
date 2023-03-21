@@ -12,19 +12,20 @@ This is meant to be used **legally** in a mass-setup line for schools or busines
 
 - Choose between Home, Pro, Education, or Enterprise
 - Works on Windows 10 and up (tested on Windows 11)
+- Automatically creates a restore point before installation
 - Fairly simple to run and execute
 
 ### Disadvantages
 
-- No error-catching
+- No proper error-catching
 - *Lots* of inefficient code
 - No real wiki yet
 
 ### DISCLAIMER
 
 **I'm not responsible for any damage this script does.** In the end, **you** are the one who chose to run it. Understand the risks involved with this tool:
- - Irreversible data loss
- - Product key loss
+
+ - Possible product key loss
 
 ### ✨ **Installation** ✨ <sup><sub>For *one* machine</sub></sup>
 
@@ -32,7 +33,7 @@ Press `⊞ + S` to open the Search menu, and type `wt`, right click and press Ru
 
 Once you've done that, copy the following script into the terminal:
 ```
-iwr -useb https://github.com/QuarTheDev/windows-upgrade-cli/raw/main/upgrader.ps1 | iex
+'[Net.ServicePointManager]::SecurityProtocol=[Net.SecurityProtocolType]::Tls12'; iwr -useb 'https://raw.githubusercontent.com/QuarTheDev/windows-upgrade-cli/main/upgrader.ps1'|%{$_}|iex
 ```
 A command line will open, and it will ask you which version to upgrade to, asks if you'd like No Media Player mode or not, then upgrades for you.
 
