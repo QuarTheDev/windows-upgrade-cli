@@ -19,13 +19,12 @@ This is meant to be used **legally** in a mass-setup line for schools or busines
 
 - No proper error-catching
 - *Lots* of inefficient code
-- No real wiki yet
+- No proper documentation
+- Possible data loss
 
 ### DISCLAIMER
 
-**I'm not responsible for any damage this script does.** In the end, **you** are the one who chose to run it. Understand the risks involved with this tool:
-
- - Possible product key loss
+**I'm not responsible for any damage this script does.** In the end, **you** are the one who chooses to run it. Understand the risks involved with this tool.
 
 ### ✨ **Installation** ✨ <sup><sub>For *one* machine</sub></sup>
 
@@ -69,7 +68,7 @@ In the future, I plan to work on the following features:<br><sup>**ⓘ** ‌ ‌
 There's a small list of known issues. They are currently being worked on or investigated;
 
 - The script always pushes error `0xC004F069`. I'm not sure how to prevent this dialog box from appearing.
-- On virtual machines, some of the commands are not understood.
+- On virtual machines, some of the commands are not correctly interpreted.
 
 ### Questions
 
