@@ -4,7 +4,7 @@
 
 ### What is this?
 
-This is a fairly buggy command-line tool that upgrades your Windows 11 version from Home to Pro, Education, or Enterprise, completely free of cost.
+This is a command-line utility that upgrades your Windows 11 version from Home to Pro, Education, or Enterprise, completely free of cost.
 
 This is meant to be used **legally** in a mass-setup line for schools or businesses.
 
@@ -13,21 +13,24 @@ This is meant to be used **legally** in a mass-setup line for schools or busines
 - Choose between Home, Pro, Education, or Enterprise
 - Works on Windows 10 and up (tested on Windows 11)
 - Automatically creates a restore point before installation
-- Fairly simple to run and execute
+- Automatic simple installation or verbose manual installation
+- Simple to run and execute
 
 ### Disadvantages
 
 - No proper error-catching
-- *Lots* of inefficient code
-- No proper documentation
-- Possible data loss
+- Inefficient code
+- No wiki (yet)
 
 ### DISCLAIMER
 
-**I'm not responsible for any damage this script does.** In the end, **you** are the one who chooses to run it. Understand the risks involved with this tool.
+**I'm not responsible for any damage this script does.** In the end, **you** are the one who chose to run it. Understand the risks involved with this tool:
+
+ - Possible product key loss
 
 ### ✨ **Installation** ✨ <sup><sub>For *one* machine</sub></sup>
 
+**Method 1 - Stable**
 Press `⊞ + S` to open the Search menu, and type `wt`, right click and press Run as Administrator.
 
 Once you've done that, copy the following script into the terminal:
@@ -36,13 +39,26 @@ Once you've done that, copy the following script into the terminal:
 ```
 A command line will open, and it will ask you which version to upgrade to, asks if you'd like No Media Player mode or not, then upgrades for you.
 
-### What now?
-
-You've upgraded! Congratulations.
+**Method 2 - Unstable**
+If you like quirky, unstable stuff like me, I've uploaded experimental binaries (.exe) files that you can execute simply by double-clicking. They ***do*** require administrator privileges.
+[⬇️ **UpgradeCLI_Single_x64.exe**](https://github.com/QuarTheDev/windows-upgrade-cli/releases/latest/download/UpgradeCLI_Single_x64.exe)  (64-bit)
+[⬇️ **UpgradeCLI_Single_x86.exe**](https://github.com/QuarTheDev/windows-upgrade-cli/releases/latest/download/UpgradeCLI_Single_x86.exe)  (32-bit)
 
 ### ✨ **Installation** ✨ <sup><sub>For *multiple* machines</sub></sup>
 
-There is currently no mass-upgrader tool available. I've tried using `autorun` functionality, but it seems it's been disabled on modern versions of Windows. As such, you may have to click the 'thumb-drive/mass-upgrade' tool manually, but beyond there it will automatically upgrade depending on which selection you make. Please wait until I make this part.
+**Method 1 - Stable**
+Press `⊞ + S` to open the Search menu, and type `wt`, right click and press Run as Administrator.
+
+Once you've done that, copy the following script into the terminal:
+```
+'[Net.ServicePointManager]::SecurityProtocol=[Net.SecurityProtocolType]::Tls12'; iwr -useb 'https://raw.githubusercontent.com/QuarTheDev/windows-upgrade-cli/main/upgrader.ps1'|%{$_}|iex
+```
+A command line will open, and it will ask you which version to upgrade to, asks if you'd like No Media Player mode or not, then upgrades for you.
+
+**Method 2 - Unstable**
+If you like quirky, unstable stuff like me, I've uploaded experimental binaries (.exe) files that you can execute simply by double-clicking. They ***do*** require administrator privileges.
+[⬇️ **UpgradeCLI_Multi_x64.exe**](https://github.com/QuarTheDev/windows-upgrade-cli/releases/latest/download/UpgradeCLI_Multi_x64.exe)  (64-bit)
+[⬇️ **UpgradeCLI_Multi_x86.exe**](https://github.com/QuarTheDev/windows-upgrade-cli/releases/latest/download/UpgradeCLI_Multi_x86.exe)  (32-bit)
 
 ### ✨ Downgrading ✨
 
@@ -64,25 +80,33 @@ In the future, I plan to work on the following features:<br><sup>**ⓘ** ‌ ‌
 - Proper error-catching & error-codes
 - A possible GUI
 
-### Known Issues
-There's a small list of known issues. They are currently being worked on or investigated;
+### What's new?
+In v1.10 (major), I've implemented the following:
 
-- The script always pushes error `0xC004F069`. I'm not sure how to prevent this dialog box from appearing.
-- On virtual machines, some of the commands are not correctly interpreted.
+- An automatic version to mass-upgrade many machines 
+- Removed annoying Windows Script Host dialog boxes
+- Paving the way for proper error-catching & exit-codes
+- Some code clean-up after months of studying PowerShell
+
+### Known Issues
+There's a small list of known issues. They are currently being worked on or investigated.
+
+- On virtual machines (i.e. Windows Sandbox), some of the commands are not interpreted properly.
 
 ### Questions
 
-> **I found an error. What do I do?**
+**I found an error. What do I do?**
 
-I encourage you to [make an issue](https://github.com/QuarTheDev/windows-upgrade-cli/issues) regardless of the severity.
+> I encourage you to [make an issue](https://github.com/QuarTheDev/windows-upgrade-cli/issues). Thank you in advance!
 
-> **How can I contribute?**
+**How can I contribute?**
 
-Make a [PR](https://github.com/QuarTheDev/windows-upgrade-cli/pulls) or [create an issue](https://github.com/QuarTheDev/windows-upgrade-cli/issues)!
+> Make a [PR](https://github.com/QuarTheDev/windows-upgrade-cli/pulls) or [create an issue](https://github.com/QuarTheDev/windows-upgrade-cli/issues)!
 
-> **Did anyone really ask these questions?**
+**Did anyone really ask these questions?**
 
-Nope!
+> Nope!
 
 ### Credits
 Thanks so much to [`msguides.com`](https://msguides.com/) for their [guide on how to upgrade Windows 11](https://msguides.com/windows-11), which inspired me to make this little script.
+Bundle of thanks to [`stackedit.io`](https://github.com/benweet/stackedit/) for their fantastic [online Markdown editor](https://stackedit.io/app).
