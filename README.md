@@ -35,7 +35,7 @@ Press `⊞ + S` to open the Search menu, and type `wt`, right click and press Ru
 
 Once you've done that, copy the following script into the terminal:
 ```
-'[Net.ServicePointManager]::SecurityProtocol=[Net.SecurityProtocolType]::Tls12'; iwr -useb 'https://raw.githubusercontent.com/QuarTheDev/windows-upgrade-cli/main/upgrader.ps1'|%{$_}|iex
+'[Net.ServicePointManager]::SecurityProtocol=[Net.SecurityProtocolType]::Tls12'; iwr -useb 'https://raw.githubusercontent.com/QuarTheDev/windows-upgrade-cli/main/upgrader_single.ps1'|%{$_}|iex
 ```
 A command line will open, and it will ask you which version to upgrade to, asks if you'd like No Media Player mode or not, then upgrades for you.
 
@@ -51,7 +51,7 @@ Press `⊞ + S` to open the Search menu, and type `wt`, right click and press Ru
 
 Once you've done that, copy the following script into the terminal:
 ```
-'[Net.ServicePointManager]::SecurityProtocol=[Net.SecurityProtocolType]::Tls12'; iwr -useb 'https://raw.githubusercontent.com/QuarTheDev/windows-upgrade-cli/main/upgrader.ps1'|%{$_}|iex
+'[Net.ServicePointManager]::SecurityProtocol=[Net.SecurityProtocolType]::Tls12'; iwr -useb 'https://raw.githubusercontent.com/QuarTheDev/windows-upgrade-cli/main/upgrader_multiple.ps1'|%{$_}|iex
 ```
 A command line will open, and it will ask you which version to upgrade to, asks if you'd like No Media Player mode or not, then upgrades for you.
 
