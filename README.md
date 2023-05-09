@@ -39,9 +39,9 @@ Once you've done that, copy the following script into the terminal:
 ```
 A command line will open, and it will ask you which version to upgrade to, asks if you'd like No Media Player mode or not, then upgrades for you.
 
-**Method 2 - Unstable**
-If you like quirky, unstable stuff like me, I've uploaded experimental binaries (.exe) files that you can execute simply by double-clicking. They ***do*** require administrator privileges.
-[⬇️ **UpgradeCLI_Single_x64.exe**](https://github.com/QuarTheDev/windows-upgrade-cli/releases/latest/download/UpgradeCLI_Single_x64.exe)  (64-bit)
+**Method 2 - Unstable**<br>
+If you like quirky, unstable stuff like me, I've uploaded experimental binaries (.exe) files that you can execute simply by double-clicking. They ***do*** require administrator privileges.<br><br>
+[⬇️ **UpgradeCLI_Single_x64.exe**](https://github.com/QuarTheDev/windows-upgrade-cli/releases/latest/download/UpgradeCLI_Single_x64.exe)  (64-bit)<br>
 [⬇️ **UpgradeCLI_Single_x86.exe**](https://github.com/QuarTheDev/windows-upgrade-cli/releases/latest/download/UpgradeCLI_Single_x86.exe)  (32-bit)
 
 ### ✨ **Installation** ✨ <sup><sub>For *multiple* machines</sub></sup>
@@ -55,9 +55,9 @@ Once you've done that, copy the following script into the terminal:
 ```
 A command line will open, and it will ask you which version to upgrade to, asks if you'd like No Media Player mode or not, then upgrades for you.
 
-**Method 2 - Unstable**
-If you like quirky, unstable stuff like me, I've uploaded experimental binaries (.exe) files that you can execute simply by double-clicking. They ***do*** require administrator privileges.
-[⬇️ **UpgradeCLI_Multi_x64.exe**](https://github.com/QuarTheDev/windows-upgrade-cli/releases/latest/download/UpgradeCLI_Multi_x64.exe)  (64-bit)
+**Method 2 - Unstable**<br>
+If you like quirky, unstable stuff like me, I've uploaded experimental binaries (.exe) files that you can execute simply by double-clicking. They ***do*** require administrator privileges.<br><br>
+[⬇️ **UpgradeCLI_Multi_x64.exe**](https://github.com/QuarTheDev/windows-upgrade-cli/releases/latest/download/UpgradeCLI_Multi_x64.exe)  (64-bit)<br>
 [⬇️ **UpgradeCLI_Multi_x86.exe**](https://github.com/QuarTheDev/windows-upgrade-cli/releases/latest/download/UpgradeCLI_Multi_x86.exe)  (32-bit)
 
 ### ✨ Downgrading ✨
